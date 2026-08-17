@@ -1,0 +1,131 @@
+:root {
+  --bg: #dce9e0;
+  --bg-soft: #cadecf;
+  --surface: #f7fcf8;
+  --surface-muted: #eaf3ec;
+  --text: #1a2b22;
+  --text-muted: #5f7a6c;
+  --border: #d3e3d8;
+
+  --accent: #4f46e5;
+  --accent-dark: #4338ca;
+  --danger: #e11d48;
+  --danger-dark: #be123c;
+
+  --priority-low: #059669;
+  --priority-medium: #d97706;
+  --priority-high: #e11d48;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.15);
+  --transition: 180ms ease;
+}
+
+[data-theme='dark'] {
+  --bg: #0f1712;
+  --bg-soft: #16211a;
+  --surface: #17231b;
+  --surface-muted: #1f2e25;
+  --text: #e6f0ea;
+  --text-muted: #9fb4a8;
+  --border: #2b3d33;
+
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --danger: #f43f5e;
+  --danger-dark: #fb7185;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition), color var(--transition);
+}
+
+button {
+  font-family: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--surface-muted);
+  color: var(--text);
+  transition: transform var(--transition), background var(--transition),
+    box-shadow var(--transition), border-color var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--sm {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
+}
+
+.btn--primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn--danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn--danger:hover {
+  background: var(--danger-dark);
+}
